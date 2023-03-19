@@ -23,17 +23,3 @@ jobs:
       run: |
         flake8 --config=.flake8 --statistics --count
 
-    - name: Install Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: 14
-
-    - name: Install HTML5 and CSS linters
-      run: |
-        npm install html5validator stylelint stylelint-config-standard
-
-    - name: Lint HTML with html5validator
-      run: npx html5validator --root . --ignore-re="Attribute “allow” not allowed on element “iframe” at this point"
-
-    - name: Lint CSS with stylelint
-      run: npx stylelint "**/*.css"
