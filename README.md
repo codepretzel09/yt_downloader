@@ -13,7 +13,7 @@ This project is for educational and personal use only. Please use it responsibly
 
 YouTube Downloader is a simple and user-friendly web application that allows users to download YouTube videos as MP4 (video) or MP3 (audio) files. The application is built using Flask, a Python web framework, and Pytube, a lightweight library to download YouTube videos.
 
-![image](https://user-images.githubusercontent.com/68131212/226214416-371a840a-a0ad-40a6-80fc-22d982cd7f8c.png)
+![image](https://user-images.githubusercontent.com/68131212/226217130-39526762-f3c8-4305-a91b-47f6adc41d48.png)
 
 ## Features
 
