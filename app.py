@@ -4,10 +4,9 @@ from pytube import YouTube
 import os
 
 app = Flask(__name__)
-DOWNLOAD_DIR = 'downloads'
-
-# Ensure the download directory exists
-os.makedirs(DOWNLOAD_DIR, exist_ok=True)
+default_dir = "/downloads"
+mp3_dir = "/mnt/media2/Music"
+mp4_dir = "/mnt/media2/Youtube"
 
 @app.route("/")
 def index():
@@ -17,7 +16,7 @@ def index():
 def download():
     url = request.form["url"]
     file_type = request.form["file_type"]
-    output_path = "/mnt/media2/Youtube"  # Replace this with the desired output path
+    output_path = default_dir  # Replace this with the default downlaod path
     download_youtube(url, file_type, output_path)
     return jsonify({"message": "Download complete. Check Plex!"})
 
@@ -26,12 +25,12 @@ def download_youtube(url, file_type, output_path):
 
     if file_type.lower() == "mp4":
         video = yt.streams.filter(file_extension='mp4').get_highest_resolution()
-        video.download(output_path=output_path)
+        video.download(output_path=mp4_dir) # can update this to use a nfs share
         print(f"Video downloaded: {video.default_filename}")
 
     elif file_type.lower() == "mp3":
         video = yt.streams.filter(only_audio=True).first()
-        file_path = video.download(output_path="/mnt/media2/Music")
+        file_path = video.download(output_path=mp3_dir) # can update this to use a nfs share
         base, ext = os.path.splitext(file_path)
         new_file = base + ".mp3"
         os.rename(file_path, new_file)
