@@ -1,3 +1,8 @@
+![Workflow Status](https://github.com/codepretzel09/yt_downloader/actions/workflows/linter.yml/badge.svg)
+
+
+
+
 # YouTube Downloader
 
 YouTube Downloader is a simple and user-friendly web application that allows users to download YouTube videos as MP4 (video) or MP3 (audio) files. The application is built using Flask, a Python web framework, and Pytube, a lightweight library to download YouTube videos.
