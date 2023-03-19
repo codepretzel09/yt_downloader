@@ -1,6 +1,12 @@
+# ⚠️ Disclaimer
+
+This project is for educational and personal use only. Please use it responsibly and respect the rights of content creators. Do not use this tool to download copyrighted material without permission. By using this tool, you agree to use it legally and ethically.
+
+---
+
+
+
 ![Workflow Status](https://github.com/codepretzel09/yt_downloader/actions/workflows/linter.yml/badge.svg)
-
-
 
 
 # YouTube Downloader
